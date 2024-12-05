@@ -1,0 +1,7 @@
+{
+  "UniqueModName": "NBKRedSpy_QM_RaidShowAlly",
+  "Assemblies": [
+    "QM_RaidShowAlly.dll"
+  ],
+  "Dependencies": []
+}
