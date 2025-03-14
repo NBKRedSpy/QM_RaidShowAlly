@@ -6,7 +6,7 @@
   </PropertyGroup>
 	<PropertyGroup>
 		<GAME_NAME>Quasimorph</GAME_NAME>
-		<SteamId>3378744839</SteamId>
+		<SteamId>3443959958</SteamId>
 	</PropertyGroup>
 	<PropertyGroup>
 		<GAME_PATH Condition="!Exists('$(GAME_PATH)')">$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App $(GAME_STEAM_ID)', 'InstallLocation', null, RegistryView.Registry64, RegistryView.Registry32))</GAME_PATH>
@@ -27,9 +27,6 @@
 
 
 	<ItemGroup>
-		<Reference Include="Unity.TextMeshPro">
-			<HintPath>$(ManagedPath)Unity.TextMeshPro.dll</HintPath>
-		</Reference>
 		<Reference Include="Assembly-CSharp" publicize="true">
 			<HintPath>$(ManagedPath)Assembly-CSharp.dll</HintPath>
 			<Private>False</Private>
