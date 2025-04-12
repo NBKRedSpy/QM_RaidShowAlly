@@ -13,3 +13,8 @@ Thanks!
 
 # Source Code
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_RaidShowAlly
+
+# Change Log
+
+## 1.1.0
+* Compatible with the 0.8.6 opt in beta 

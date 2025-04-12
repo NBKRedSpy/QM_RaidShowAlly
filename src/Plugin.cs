@@ -25,14 +25,12 @@ namespace QM_RaidShowAlly
 
             HarmonyMethod patchMethod = new HarmonyMethod(AccessTools.Method(typeof(Plugin), nameof(Plugin.SetStartButtonText)));
 
-            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Show),
+            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Configure),
                 new Type[] { typeof(Mission), typeof(bool) }),  
                 postfix: patchMethod);
 
-            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.SwapSideToDefenseButtonOnClick)),
-                postfix: patchMethod);
-
-            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.SwapSideToAttackButtonOnClick)),
+            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Configure),
+                new Type[] { typeof(Station) }),
                 postfix: patchMethod);
         }
 
@@ -41,7 +39,7 @@ namespace QM_RaidShowAlly
             if (__instance?._mission?.IsStoryMission ?? true) return;
 
             string ally = Localization.Get("faction." + __instance._mission.BeneficiaryFactionId + ".name");
-            __instance._startOperationButtonCaption.text = $"Start ({ally})";
+            __instance._startOperationButton.ChangeLabel($"Start ({ally})");
         }
 
 
