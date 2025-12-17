@@ -1,0 +1,11 @@
+{
+  "UniqueModName": "NBKRedSpy_QM_RaidShowAlly",
+  "Assemblies": [
+    "QM_RaidShowAlly_Bootstrap.dll"
+  ],
+  "Dependencies": [], 
+  "SteamTags": [
+    "0.9.5",
+    "Quality of Life"
+  ]
+}
