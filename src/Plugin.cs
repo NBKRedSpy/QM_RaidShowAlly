@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using MGSC;
+using QM_RaidShowAlly_Bootstrap;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,15 +12,19 @@ using UnityEngine;
 
 namespace QM_RaidShowAlly
 {
-    public static class Plugin
+    public class Plugin : BootstrapMod
     {
         public static string ModAssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
 
         public static string ConfigPath => Path.Combine(Application.persistentDataPath, ModAssemblyName, "config.json");
         public static string ModPersistenceFolder => Path.Combine(Application.persistentDataPath, ModAssemblyName);
 
-        [Hook(ModHookType.AfterConfigsLoaded)]
-        public static void AfterConfig(IModContext context)
+        public Plugin(HookEvents hookEvents, bool isBeta) : base(hookEvents, isBeta)
+        {
+            HookEvents.AfterConfigsLoaded += AfterConfig;
+        }
+
+        public void AfterConfig(IModContext context)
         {
             Harmony harmony = new Harmony("NBKRedSpy_" + ModAssemblyName);
 
