@@ -20,6 +20,8 @@ namespace QM_RaidShowAlly.Patches.RememberMissionSide
         public static void SwapSideToDefenseButtonOnClickPostfix(PrepareRaidScreen __instance)
         {
             //"Defense" actually means reverse.
+            // Note: Any missions that cannot be reversed - such as story missions - will not call this
+            //  because the button will be disabled.
             RememberMissionSide.SetAsReverseMission(__instance._mission);
         }
 
