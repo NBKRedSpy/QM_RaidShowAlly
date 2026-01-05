@@ -3,7 +3,7 @@ using MGSC;
 using System.CodeDom;
 using System.Collections;
 
-namespace QM_RaidShowAlly.Patches
+namespace QM_RaidShowAlly.Patches.RememberMissionSide
 {
 
     /// <summary>
@@ -20,7 +20,7 @@ namespace QM_RaidShowAlly.Patches
         public static void SwapSideToDefenseButtonOnClickPostfix(PrepareRaidScreen __instance)
         {
             //"Defense" actually means reverse.
-            ChangeSide(__instance, true);
+            RememberMissionSide.SetAsReverseMission(__instance._mission);
         }
 
         [HarmonyPostfix]
@@ -28,12 +28,7 @@ namespace QM_RaidShowAlly.Patches
         public static void SwapSideToAttackButtonOnClickPostfix(PrepareRaidScreen __instance)
         {
             //"Attack" actually means don't reverse.
-            ChangeSide(__instance, false);
-        }
-
-        private static void ChangeSide(PrepareRaidScreen __instance, bool reverseMission)
-        {
-            RememberMissionSide.SetMissionSide(__instance._mission, reverseMission);
+            RememberMissionSide.SetAsNormalMission(__instance._missions, __instance._station.Id);
         }
     }
 }

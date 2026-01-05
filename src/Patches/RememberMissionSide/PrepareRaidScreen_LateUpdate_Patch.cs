@@ -2,7 +2,7 @@
 using MGSC;
 using System;
 
-namespace QM_RaidShowAlly.Patches
+namespace QM_RaidShowAlly.Patches.RememberMissionSide
 {
     /// <summary>
     /// Handles the "reverse the mission side" when the PrepareRaidScreen has been opened.
@@ -24,22 +24,13 @@ namespace QM_RaidShowAlly.Patches
         {
             try
             {
-                if (!RememberMissionSide.ExecuteMissionSideReversal) return;
+                if (!RememberMissionSide.ExecuteMissionSideCheck) return;
 
-                RememberMissionSide.ExecuteMissionSideReversal = false;
+                RememberMissionSide.ExecuteMissionSideCheck = false;
 
-
-                //Get the reverse side of the mission.  The attack and defense missions are different missions.
-                Mission reversedMission = __instance._missions.Get(__instance._mission.StationId, true);
-
-                //Verify mission hasn't changed.
-                if (!RememberMissionSide.CurrentMission.TryGetTarget(out Mission mission) || mission != reversedMission) return;
-
-                //"Defense" actually means reverse.
-                if (!RememberMissionSide.ReverseMission) return;
+                if (!RememberMissionSide.ShouldReverseMission(__instance._missions, __instance._station.Id)) return;
 
                 __instance.SwapSideToDefenseButtonOnClick(default, default);
-
             }
             catch (Exception ex)
             {
