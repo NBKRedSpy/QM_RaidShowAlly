@@ -64,6 +64,9 @@ namespace QM_RaidShowAlly.Patches.RememberMissionSide
             //Check if the user reversed the mission.
             Mission mission = missions.Get(stationId, true);
 
+            //This should be a story mission, or the user changed saves.
+            if (mission == null) return false;
+
             return ReversedStationMissions.TryGetValue(mission, out _);
 
         }
