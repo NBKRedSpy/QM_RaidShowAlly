@@ -19,6 +19,8 @@ namespace QM_RaidShowAlly
         public static string ConfigPath => Path.Combine(Application.persistentDataPath, ModAssemblyName, "config.json");
         public static string ModPersistenceFolder => Path.Combine(Application.persistentDataPath, ModAssemblyName);
 
+        public static Logger Logger { get; private set; } = new Logger();
+
         public Plugin(HookEvents hookEvents, bool isBeta) : base(hookEvents, isBeta)
         {
             HookEvents.AfterConfigsLoaded += AfterConfig;
@@ -37,6 +39,8 @@ namespace QM_RaidShowAlly
             harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Configure),
                 new Type[] { typeof(Station) }),
                 postfix: patchMethod);
+
+            harmony.PatchAll();
         }
 
         public static void SetStartButtonText(PrepareRaidScreen __instance)
