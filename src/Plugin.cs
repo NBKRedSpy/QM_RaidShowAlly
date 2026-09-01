@@ -30,27 +30,7 @@ namespace QM_RaidShowAlly
         {
             Harmony harmony = new Harmony("NBKRedSpy_" + ModAssemblyName);
 
-            HarmonyMethod patchMethod = new HarmonyMethod(AccessTools.Method(typeof(Plugin), nameof(Plugin.SetStartButtonText)));
-
-            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Configure),
-                new Type[] { typeof(Mission), typeof(bool) }),  
-                postfix: patchMethod);
-
-            harmony.Patch(AccessTools.Method(typeof(PrepareRaidScreen), nameof(PrepareRaidScreen.Configure),
-                new Type[] { typeof(Station) }),
-                postfix: patchMethod);
-
             harmony.PatchAll();
         }
-
-        public static void SetStartButtonText(PrepareRaidScreen __instance)
-        {
-            if (__instance?._mission?.IsStoryMission ?? true) return;
-
-            string ally = Localization.Get("faction." + __instance._mission.BeneficiaryFactionId + ".name");
-            __instance._startOperationButton.ChangeLabel($"Start ({ally})");
-        }
-
-
     }
 }

@@ -1,12 +1,10 @@
-[h1]Quasimorph Raid Show Ally and Remember Side[/h1]
+[h1]Remember Mission Side[/h1]
 
 
-Ever accidentally chosen the wrong corp for a mission?  Closed and re-opened the mission and forgot to choose the desired side again?
-This mod does the following:
-[list]
-[*]Remembers the side chosen when re-opening a mission.
-[*]Changes the mission start button to include the faction that the player is raiding for.
-[/list]
+Ever started the wrong side of a mission because the mission screen reset to the default side?
+For instance, accidentally hitting escape, which brings the user back to the ship screen.
+
+This mod remembers the side chosen when re-opening a mission.
 
 [h1]Support[/h1]
 
@@ -18,6 +16,11 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_RaidShowAlly
 
 [h1]Change Log[/h1]
+
+[h2]1.2.1[/h2]
+[list]
+[*]Removed the side name on the button as the game now has this.
+[/list]
 
 [h2]1.2.0[/h2]
 [list]
