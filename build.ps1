@@ -12,7 +12,10 @@ try {
     "Bootstrap"
     dotnet clean ./src\QM_RaidShowAlly_Bootstrap.csproj
     dotnet build -c Release ./src\QM_RaidShowAlly_Bootstrap.csproj -o $packageFolder
+    Copy-Item ../main-repo/media/thumbnail.png $packageFolder
+
     
+
     "Stable"
     dotnet clean ..\main-repo\src\QM_RaidShowAlly.csproj
     dotnet build -c Release ..\main-repo\src\QM_RaidShowAlly.csproj -o $packageFolder\Stable
@@ -24,6 +27,7 @@ try {
     dotnet build -c Release ..\beta\src\QM_RaidShowAlly.csproj -o $packageFolder\Beta
     # dotnet build has a bug where it always copies any project references.
     del $packageFolder/Beta/QM_RaidShowAlly_Bootstrap.*
+
 
     # ---- Create the package zip file.
     Copy-Item ../main-repo/media/thumbnail.png $packageFolder
