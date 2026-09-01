@@ -14,6 +14,9 @@ Thanks!
 # Source Code
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_RaidShowAlly
 
+# Tags
+Remember, Mission, Side, Attacker, Defender, Exit
+
 # Change Log
 ## 1.2.1
 * Removed the side name on the button as the game now has this.

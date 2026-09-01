@@ -15,6 +15,10 @@ Thanks!
 
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_RaidShowAlly
 
+[h1]Tags[/h1]
+
+Remember, Mission, Side, Attacker, Defender, Exit
+
 [h1]Change Log[/h1]
 
 [h2]1.2.1[/h2]
