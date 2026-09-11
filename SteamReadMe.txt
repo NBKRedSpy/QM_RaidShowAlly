@@ -21,23 +21,4 @@ Remember, Mission, Side, Attacker, Defender, Exit
 
 [h1]Change Log[/h1]
 
-[h2]1.2.1[/h2]
-[list]
-[*]Removed the side name on the button as the game now has this.
-[/list]
-
-[h2]1.2.0[/h2]
-[list]
-[*]Added remembering side.
-[*]Changed "friendly" name of the mod.
-[/list]
-
-[h2]1.1.1[/h2]
-[list]
-[*]0.9.8.2 compatibility.
-[/list]
-
-[h2]1.1.0[/h2]
-[list]
-[*]Compatible with the 0.8.6 opt in beta
-[/list]
+https://github.com/NBKRedSpy/QM_RaidShowAlly/blob/main/CHANGELOG.md

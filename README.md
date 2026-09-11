@@ -18,15 +18,4 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_RaidShowAl
 Remember, Mission, Side, Attacker, Defender, Exit
 
 # Change Log
-## 1.2.1
-* Removed the side name on the button as the game now has this.
-
-## 1.2.0
-* Added remembering side.
-* Changed "friendly" name of the mod.
-
-## 1.1.1 
-* 0.9.8.2 compatibility.
-
-## 1.1.0
-* Compatible with the 0.8.6 opt in beta 
+https://github.com/NBKRedSpy/QM_RaidShowAlly/blob/main/CHANGELOG.md
